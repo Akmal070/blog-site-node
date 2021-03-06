@@ -8,7 +8,7 @@ mongoose.connect('mongodb://localhost/blog', { useUnifiedTopology: true, useNewU
 app.set('view engine', 'ejs')
 
 app.use('/articles', articleRouter)
-app.use
+app.use(express.urlencoded({ extended: false }))
 
 app.get('/', (req, res) => {
     const articles = [{
